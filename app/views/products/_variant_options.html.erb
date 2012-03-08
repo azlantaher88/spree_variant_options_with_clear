@@ -5,7 +5,7 @@
     <% index = 0 %>
     <% @product.grouped_option_values.each do |type, values| %>
       <div id="<%= dom_id(type) %>" class="variant-options index-<%= index %>">
-        <strong class="variant-option-type"><%= "#{index}. Select #{type.presentation}" %></strong>
+        <strong class="variant-option-type"><%= "#{index.to_i + 1}. Select #{type.presentation}" %></strong>
         <ul class="variant-option-values">
         <% values.each do |value| %>
           <% classes = ["option-value"] %>
