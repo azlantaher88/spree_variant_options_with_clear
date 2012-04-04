@@ -17,7 +17,7 @@
               <% classes << ( Spree::Config[:allow_backorders] || variants.sum(&:count_on_hand) > 0 ? "in-stock" : "out-of-stock" ) %>
             <% end %>
           <% end %>
-          <li>
+          <li class="<%= type.presentation.downcase %>">
             <% classes << value.presentation.downcase %>
             <%= link_to value.has_image? ? image_tag(value.image.url, :alt => value.presentation) : content_tag(:span, value.presentation), "#", :title => value.presentation, :class => classes.join(" "), :rel => "#{type.id}-#{value.id}" %>
           </li>
