@@ -19,7 +19,7 @@
           <% end %>
           <li class="<%= type.presentation.downcase %>">
             <% classes << value.presentation.downcase %>
-            <%= link_to value.has_image? ? image_tag(value.image.url, :alt => value.presentation) : content_tag(:span, value.presentation), "#", :title => value.presentation, :class => classes.join(" "), :rel => "#{type.id}-#{value.id}" %>
+            <%= link_to value.has_image? ? image_tag(value.image.url, :alt => value.presentation) : content_tag(:span, value.presentation), "#", :title => value.presentation, :class => classes.join(" ") << " locked", :rel => "#{type.id}-#{value.id}" %>
           </li>
         <% end %>
           <li class="clear-option"><%= link_to "clear", "#clear", :class => "clear-button clear-index-#{index}" %></li>
